@@ -1,116 +1,160 @@
 {
-  "hospital": {
-    "name": "City Hospital",
-    "phone": "+91 98765 43210",
-    "email": "info@cityhospital.com",
-    "address": "Nagpur, Maharashtra, India"
+  "profile": {
+    "name": "Ram Kuhite",
+    "title": "B.Com Computer Application Student & Web Developer",
+    "bio": "Final-year B.Com in Computer Application student at R.B. College, RTMNU (Umred, Nagpur). Combining technical skills in front-end development with a strong grasp of business workflows to build practical digital systems for Indian users, MSMEs, and public-service initiatives.",
+    "email": "kuhiteram2006@gmail.com",
+    "phone": "+91 8010094883",
+    "location": "Umred, Nagpur, Maharashtra",
+    "profileImage": "static/img/about-me.png",
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
   },
-  "navigation": [
-    {"id": "home", "label": "Home"},
-    {"id": "about", "label": "About Us"},
-    {"id": "doctors", "label": "Doctors"},
-    {"id": "appointment", "label": "Appointment"},
-    {"id": "contact", "label": "Contact"}
+  "projects": [
+    {
+      "id": "finscheme",
+      "title": "FinScheme Discovery Platform",
+      "description": "A government scheme discovery platform that filters welfare schemes based on user eligibility inputs such as age, income, category, and location. Built to simplify access to welfare schemes for Indian users.",
+      "icon": "bi-bank",
+      "image": "static/img/portfolio-01.jpg",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "JSON",
+        "Welfare Schemes"
+      ],
+      "bentoClass": "col-span-2 row-span-2"
+    },
+    {
+      "id": "chota-sahukaar",
+      "title": "Chota Sahukaar Digital Ledger",
+      "description": "A digital ledger management concept designed for small shopkeepers to track udhaar, payments, and customer transactions digitally instead of manual notebooks.",
+      "icon": "bi-journal-check",
+      "image": "static/img/portfolio-03.jpg",
+      "tags": [
+        "MSME Utility",
+        "Simple Workflow",
+        "Local Business Usability"
+      ],
+      "bentoClass": "col-span-1 row-span-2"
+    },
+    {
+      "id": "weather-app",
+      "title": "Real-Time Weather App",
+      "description": "A weather application using API integration to display real-time weather information dynamically for any location.",
+      "icon": "bi-cloud-sun",
+      "image": "static/img/portfolio-04.jpg",
+      "tags": [
+        "API Integration",
+        "JavaScript",
+        "Dynamic UI"
+      ],
+      "bentoClass": "col-span-1 row-span-1"
+    },
+    {
+      "id": "multi-calculator",
+      "title": "Multi-tool Calculator Suite",
+      "description": "A versatile calculation engine featuring currency conversion, geometric shape calculations, and basic arithmetic functions.",
+      "icon": "bi-calculator",
+      "image": "static/img/blog-1.jpg",
+      "tags": [
+        "JavaScript",
+        "Currency Converter",
+        "Geometry"
+      ],
+      "bentoClass": "col-span-1 row-span-1"
+    },
+    {
+      "id": "portfolio-site",
+      "title": "Personal Portfolio Website",
+      "description": "A responsive personal portfolio website built to showcase projects, skills, internships, and practical experience with a modern glassmorphic UI.",
+      "icon": "bi-person-badge",
+      "image": "static/img/blog-2.jpg",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive Design"
+      ],
+      "bentoClass": "col-span-1 row-span-1"
+    },
+    {
+      "id": "planters-hub",
+      "title": "Planters Hub Landing Page",
+      "description": "A responsive landing page created for a plant-related brand concept with modern UI structure, vibrant imagery, and clean section hierarchy.",
+      "icon": "bi-tree",
+      "image": "static/img/portfolio-02.jpg",
+      "tags": [
+        "Landing Page",
+        "UI/UX",
+        "Brand Concept"
+      ],
+      "bentoClass": "col-span-2 row-span-1"
+    },
+    {
+      "id": "guessing-game",
+      "title": "Number Guessing Game",
+      "description": "A beginner logic-based game demonstrating programming fundamentals, conditional logic, and user interaction handling.",
+      "icon": "bi-controller",
+      "image": "static/img/blog-3.jpg",
+      "tags": [
+        "C++ Intern Project",
+        "Game Logic",
+        "Interactivity"
+      ],
+      "bentoClass": "col-span-1 row-span-1"
+    },
+    {
+      "id": "tic-tac-toe",
+      "title": "Tic-Tac-Toe Game",
+      "description": "A browser-based game demonstrating DOM manipulation, array matrix evaluation, and classic game logic.",
+      "icon": "bi-grid-3x3",
+      "image": "static/img/blog-4.jpg",
+      "tags": [
+        "DOM Manipulation",
+        "JavaScript",
+        "Game Dev"
+      ],
+      "bentoClass": "col-span-1 row-span-1"
+    },
+    {
+      "id": "stopwatch-app",
+      "title": "Stopwatch Application",
+      "description": "A stopwatch application using JavaScript timing functions, interval tracking, and interactive start/stop/reset controls.",
+      "icon": "bi-stopwatch",
+      "image": "static/img/blog-5.jpg",
+      "tags": [
+        "Timing Functions",
+        "JavaScript",
+        "Chronometer"
+      ],
+      "bentoClass": "col-span-2 row-span-1"
+    }
   ],
-  "home": {
-    "hero": {
-      "title": "Welcome to City Hospital",
-      "subtitle": "Quick and Affordable Healthcare for Everyone",
-      "description": "We provide quick and affordable healthcare services. Book your appointment online easily."
+  "experience": [
+    {
+      "role": "Software Developer Intern",
+      "company": "StaxTech",
+      "period": "Successfully Completed",
+      "description": "Worked as a Software Developer Intern focusing on practical front-end architecture. Developed a comprehensive Multi-tool Calculator featuring currency conversion and geometric calculations, and built a fully responsive personal Portfolio Website to showcase practical developer capabilities.",
+      "color": "var(--primary)"
     },
-    "services": {
-      "title": "Our Services",
-      "description": "We provide the best treatment with expert doctors.",
-      "items": [
-        {"name": "Dentist", "desc": "Complete dental treatment with affordable fees."},
-        {"name": "Eye Specialist", "desc": "Best eye care and treatment services."},
-        {"name": "Child Specialist", "desc": "Special healthcare services for children."},
-        {"name": "General Doctor", "desc": "Fast treatment for common health problems."}
-      ]
+    {
+      "role": "C++ Intern",
+      "company": "Micro IT",
+      "period": "Completed",
+      "description": "Focused on core programming fundamentals, logic building, and third-party service integration. Developed an interactive Number Guessing Game demonstrating game logic and built a dynamic Weather App utilizing live API integration for real-time weather tracking.",
+      "color": "var(--cyan)"
     },
-    "about_preview": {
-      "title": "ABOUT CITY HOSPITAL",
-      "subtitle": "Experienced Doctors and Best Medical Care",
-      "description": "City Hospital provides quality treatment with experienced doctors, modern facilities, and affordable fees.",
-      "features": [
-        "Experienced Doctors",
-        "Affordable Treatment",
-        "Fast Appointment Booking",
-        "Clean and Safe Environment"
-      ]
+    {
+      "role": "Community Volunteer & Field Surveyor",
+      "company": "Gramin Vikas Manch NGO",
+      "period": "Active Contributor",
+      "description": "Engaged in grassroots community development across nearby villages and MIDC-related areas. Conducted waste management survey work under Swachh Maharashtra Abhiyan 2.0 and educational survey activities. Actively participated in the 'Raste Ki Pathshala' initiative, interacting with migrant labor students, and organized medicinal plant plantation drives with students.",
+      "color": "var(--accent)"
     }
-  },
-  "doctors": {
-    "title": "Our Doctors",
-    "subtitle": "Meet our experienced doctors and choose the right specialist for your treatment.",
-    "list": [
-      {"name": "Dr. Sharma", "specialty": "Dentist", "fee": "₹300"},
-      {"name": "Dr. Patil", "specialty": "Eye Specialist", "fee": "₹400"},
-      {"name": "Dr. Khan", "specialty": "Child Specialist", "fee": "₹350"},
-      {"name": "Dr. Mehta", "specialty": "General Doctor", "fee": "₹250"}
-    ],
-    "why_choose_us": {
-      "title": "WHY CHOOSE US",
-      "subtitle": "Experienced Doctors with Quality Care",
-      "description": "Our doctors provide modern treatment with personal care and affordable consultation fees.",
-      "features": [
-        "10+ Years Experience",
-        "Modern Treatment Facilities",
-        "Friendly and Helpful Staff",
-        "Fast Appointment Process"
-      ]
-    }
-  },
-  "appointment": {
-    "title": "Book Appointment",
-    "subtitle": "Book your appointment easily with our experienced doctors.",
-    "why_choose_us": {
-      "title": "Why Choose City Hospital?",
-      "description": "We provide quick and affordable healthcare services with experienced doctors and modern treatment facilities.",
-      "features": [
-        "Experienced Doctors",
-        "Affordable Fees",
-        "Easy Appointment Booking",
-        "Clean and Safe Environment",
-        "Fast Response"
-      ]
-    },
-    "faq": [
-      {
-        "question": "How can I book an appointment?",
-        "answer": "You can fill the appointment form and our team will contact you."
-      },
-      {
-        "question": "What are the consultation charges?",
-        "answer": "Consultation charges start from ₹250 depending on the doctor."
-      },
-      {
-        "question": "Can I select my doctor?",
-        "answer": "Yes, you can choose your preferred doctor from the dropdown list."
-      }
-    ]
-  },
-  "about": {
-    "title": "About Us",
-    "subtitle": "Learn more about City Hospital and our commitment to quality healthcare.",
-    "welcome": {
-      "title": "WELCOME TO CITY HOSPITAL",
-      "subtitle": "Providing Quality Healthcare with Care and Trust",
-      "description": "City Hospital provides quality treatment with experienced doctors and good facilities.",
-      "features": [
-        "Experienced Doctors",
-        "Affordable Treatment",
-        "Modern Equipment",
-        "Clean and Safe Environment"
-      ]
-    },
-    "mission": "Our mission is to provide affordable and high-quality healthcare services to every patient with care and compassion.",
-    "vision": "Our vision is to become the most trusted hospital by providing excellent medical care and modern treatment facilities.",
-    "stats": [
-      {"label": "Years Experience", "value": "10+"},
-      {"label": "Doctors", "value": "20+"},
-      {"label": "Happy Patients", "value": "5000+"},
-      {"label": "Emergency Support", "value": "24/7"}
-    ]
-  }
+  ]
 }

@@ -1,29 +1,27 @@
-# City Hospital - Modern Web Application
+# Sovereign Portfolio | Ram Kuhite
 
-This project has been successfully migrated from a legacy WordPress + MySQL architecture into a fast, modern, and lightweight web application built with **HTML5, CSS3, Vanilla JavaScript**, and driven by **JSON**.
+A modern, high-performance professional portfolio driven by a structured JSON data model.
 
-## 🚀 How to Run the Project (New Setup)
+## Features
+- **AI-Native Design**: Modern glassmorphic UI with vibrant gradients.
+- **Dynamic Content**: All sections (Projects, Experience, Blog, Team) are rendered from `data.json`.
+- **Smooth Animations**: Powered by GSAP and ScrollTrigger.
+- **Responsive Layout**: Optimized for all devices.
+- **Interactive Lightbox**: Professional image viewing experience.
 
-Unlike the old WordPress version, you **do not** need XAMPP, PHP, or phpMyAdmin to run this project. 
+## Tech Stack
+- HTML5 / CSS3 (Vanilla)
+- JavaScript (Vanilla)
+- [GSAP](https://greensock.com/gsap/) (Animations)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
 
-### Method 1: Direct Browser Open
-1. Extract/Open the project folder.
-2. Double-click on `index.html`.
-3. The website will open in your default browser and run instantly.
+## Installation
+1. Clone the repository.
+2. Open `index.html` in your browser.
 
-### Method 2: Live Server (Recommended for Developers)
-If you are using VS Code:
-1. Open the project folder in VS Code.
-2. Install the **Live Server** extension.
-3. Right-click on `index.html` and select **"Open with Live Server"**.
-
-## 📂 Project Structure
-
-- **`index.html`**: The main Single-Page Application (SPA) skeleton.
-- **`style.css`**: Premium, modern styling using CSS Variables, Grid/Flexbox, and glassmorphism.
-- **`app.js`**: Vanilla JS logic that handles fetching data, client-side routing, and GSAP animations.
-- **`data.json`**: The core data file containing all the hospital content (Services, Doctors, FAQs, About Us, etc.).
-
-## 📝 Editing Content
-To change any text, doctors, or services, you don't need to edit the HTML. 
-Simply open **`data.json`** and modify the values there. The website will automatically update!
+## Project Structure
+- `index.html`: Main structure.
+- `style.css`: Design tokens and styling.
+- `script.js`: Rendering logic and animations.
+- `data.json`: Portfolio data source.
+- `static/`: Images and assets.

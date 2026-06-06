@@ -1,22 +1,28 @@
-# Product Requirements Document (PRD) - City Hospital Web Application
+# Product Requirements Document (PRD) - Sovereign Portfolio
 
 ## 1. Overview
-The goal is to elevate the "City Hospital" web application from a basic single-page static view into a premium, highly interactive, SEO-optimized, and feature-rich digital healthcare experience. It utilizes Vanilla JS, HTML5, CSS3, and Three.js/GSAP for 3D interactions and animations.
+The goal is to enhance Ram Kuhite's Sovereign Portfolio website to make it extremely premium, interactive, and functional. It is a single-page portfolio with a WebGL (Three.js) background, Lenis smooth scrolling, GSAP animations, and an interactive Console (shell).
 
-## 2. Core Objectives
-- **Wow Factor & Aesthetics**: Elevate the design into a premium, state-of-the-art dark-mode glassmorphic interface with HSL color harmony, rich typography (Outfit/Inter), and smooth micro-animations.
-- **Hash-Based Client-Side Routing**: Enable back/forward browser support and shareable deep links (e.g., `#/appointment`).
-- **Dynamic SEO Optimization**: Update document title, meta descriptions, and semantic headers dynamically during routing.
-- **Interactive Appointment Booking Dashboard**: A localized, database-less appointment management dashboard. Users can:
-  - Fill the booking form with real-time validation.
-  - View all booked appointments in a "My Bookings" dashboard.
-  - Cancel/reschedule appointments (persisted via `localStorage`).
-- **Doctor Directory search & filter**: Search doctors by name and filter them by specialty.
-- **Interactive FAQ Section**: Upgrade static FAQ lists into smooth, animated accordions.
-- **Interactive Contact Panel**: Real-time feedback for message submissions with local inbox logging/simulated notifications.
+## 2. Core Objectives & Enhancements
+1. **Fully Playable Console Games & Tools**:
+   - **Number Guessing Game**: Make the `guess` command fully functional. Initialize with a random number (1-100), track attempts, and guide the user dynamically with "Higher!" or "Lower!".
+   - **Functional Stopwatch**: Make `watch start`, `watch stop`, and `watch reset` fully functional. Dynamically update the stopwatch elapsed time.
+   - **Tic-Tac-Toe vs AI**: After the biometric handshake, allow the user to play Tic-Tac-Toe directly in the terminal by typing coordinates/numbers (e.g. `play 1-9`). Implement a basic AI opponent.
+2. **Local Message Center (Inbox)**:
+   - Persist contact form messages to `localStorage` in addition to Formspree submission.
+   - Add a hidden terminal command `inbox` or `messages` (optionally unlocked via biometric handshake) to view received messages directly within the portfolio's interactive console.
+3. **Hash-Based Deep Linking & Active Navigation**:
+   - Implement client-side hash routing (`#home`, `#about`, etc.).
+   - Support forward/backward browser navigation.
+   - Update navigation active styles dynamically.
+4. **Dynamic SEO & Title Tags**:
+   - Update page title dynamically as the user scrolls or navigates to different sections (e.g., "Ram Kuhite | Projects", "Ram Kuhite | Experience").
+5. **Accessibility & SEO Best Practices**:
+   - Ensure semantic HTML, proper header hierarchy, image alt texts, and unique IDs on all input/button controls.
 
-## 3. Technical Requirements
-- **Framework**: No heavy frameworks (React/Vue/etc.). Maintain pure HTML, Vanilla CSS, and JS to keep loading times fast.
-- **3D Background**: Preserve and optimize the Three.js 3D background animation with camera transition mappings.
-- **Persistence**: Use `localStorage` to save appointment states and contact messages.
-- **SEO Best Practices**: Proper title tags, meta tags, semantic hierarchy (`<h1>`), and unique ID tags on all interactive elements.
+## 3. Tech Stack & Constraints
+- Vanilla HTML5 / CSS3 / JavaScript
+- Three.js (WebGL Background)
+- GSAP & ScrollTrigger (Animations)
+- Lenis (Smooth Scrolling)
+- Bootstrap Icons

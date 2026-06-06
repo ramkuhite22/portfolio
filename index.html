@@ -1,74 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Hospital</title>
-    <meta name="description" id="meta-description" content="Welcome to City Hospital - providing quick and affordable healthcare for everyone with experienced doctors and modern medical care.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.4/build/spline-viewer.js"></script>
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
-        "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.webgpu.js",
-        "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.tsl.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
-      }
-    }
-    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ram Kuhite - Practical Digital Systems & Web Development Portfolio">
+    <title>Ram Kuhite | Practical Digital Systems & Web Development Portfolio</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Lenis CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+    <!-- theme css -->
+    <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">+</span>
-                <span class="logo-text" id="hospital-name">City Hospital</span>
-            </div>
-            <nav class="nav" id="nav-menu">
-                <!-- Navigation populated via JS -->
-            </nav>
-            <div class="mobile-menu-btn">☰</div>
+    <!-- 3D Spatial Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Sovereign Header -->
+    <nav class="glass-panel nav-container">
+        <div class="logo profile-name">
+            RAM<span class="text-gradient">KUHITE</span>
         </div>
-    </header>
+        <div class="status-indicator" id="core-status-ticker">
+            <span class="status-dot"></span>
+            <span id="ticker-text">SYSTEM STATUS: ONLINE | B.COM COMPUTER APPLICATION (FINAL YEAR)</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#experience">EXPERIENCE</a>
+            <a href="#terminal">CONSOLE</a>
+            <a href="#certifications">CERTIFICATIONS</a>
+            <a href="#activities">ACTIVITIES</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
 
-    <!-- Main Content Area -->
-    <main id="app">
-        <!-- Content dynamically injected here -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-container">
+            <div class="container">
+                <div class="profile-image-container animate-float">
+                    <img src="static/img/about-me.png" alt="Ram Kuhite" class="profile-image-main">
+                </div>
+                <div class="hero-badge" id="hero-badge-title">B.Com Computer Application Student & Web Developer</div>
+                <h1 class="hero-title">Building Practical <span class="text-gradient">Digital Systems</span> <br>For MSMEs & Indian Users</h1>
+                <p class="hero-bio" id="hero-bio-text">Final-year B.Com in Computer Application student at R.B. College, RTMNU (Umred, Nagpur). Combining technical skills in front-end development with a strong grasp of business workflows to build practical digital systems for Indian users, MSMEs, and public-service initiatives.</p>
+                <div class="terminal-install-badge glass-panel mb-4" style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 24px; border-radius: 100px; border: 1px solid var(--primary); margin-bottom: 30px;">
+                    <i class="bi bi-terminal text-primary" style="color: var(--primary);"></i>
+                    <code style="color: var(--text-main); font-family: 'Courier New', monospace; font-size: 0.95rem;">npx ram-kuhite-portfolio</code>
+                    <i class="bi bi-clipboard cursor-pointer copy-install-btn" title="Copy Install Command" style="color: var(--primary); cursor: pointer;"></i>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">Explore Practical Bento</a>
+                    <a href="#terminal" class="glass-panel text-white font-bold" style="color: white; font-weight: bold;">Launch Interactive Console</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section dark-bg-1">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Personal Background</span></div>
+                    <h2 class="section-title">About <span class="text-gradient">Ram Kuhite</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Combining academic learning with practical field exposure to build solutions that bridge technology and business workflows.</p>
+                </div>
+                <div class="about-grid" style="display: grid; grid-template-columns: 3fr 2fr; gap: 32px; align-items: start;">
+                    <div class="glass-panel p-8 rounded-3xl border-primary glow-subtle" style="padding: 32px; border-radius: 24px; border-color: var(--primary);">
+                        <h3 class="text-2xl font-bold mb-4 text-white" style="font-size: 1.5rem; margin-bottom: 16px;">Career Direction & Philosophy</h3>
+                        <p class="text-dim mb-6" style="margin-bottom: 24px; font-size: 1.05rem;">
+                            As a final-year B.Com Computer Application student at R.B. College, RTMNU, my focus is on solving actual user problems instead of just building tutorial projects. I am deeply interested in web development, business systems, and practical technology solutions tailored for Indian users, MSMEs, and public-service workflows.
+                        </p>
+                        <p class="text-dim mb-6" style="margin-bottom: 24px; font-size: 1.05rem;">
+                            My approach integrates technical front-end development with real-world field survey work. By understanding the grassroots challenges of local shopkeepers, migrant laborers, and rural communities, I aim to design data-driven tools and digital ledgers that are simple, usable, and directly impactful.
+                        </p>
+                        <div class="flex gap-4 flex-wrap" style="display: flex; gap: 16px; flex-wrap: wrap;">
+                            <div class="glass-panel px-4 py-3 rounded-2xl flex items-center gap-3" style="padding: 12px 20px; border-radius: 16px; display: flex; align-items: center; gap: 12px;">
+                                <i class="bi bi-building text-primary text-xl" style="color: var(--primary); font-size: 1.4rem;"></i>
+                                <div>
+                                    <div class="text-xs text-dim" style="font-size: 0.75rem;">Domain</div>
+                                    <div class="text-sm font-bold text-white" style="font-size: 0.9rem;">MSME & Govt Workflows</div>
+                                </div>
+                            </div>
+                            <div class="glass-panel px-4 py-3 rounded-2xl flex items-center gap-3" style="padding: 12px 20px; border-radius: 16px; display: flex; align-items: center; gap: 12px;">
+                                <i class="bi bi-people text-accent text-xl" style="color: var(--accent); font-size: 1.4rem;"></i>
+                                <div>
+                                    <div class="text-xs text-dim" style="font-size: 0.75rem;">Approach</div>
+                                    <div class="text-sm font-bold text-white" style="font-size: 0.9rem;">Community Problem-Solving</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+                        <div class="glass-panel p-8 rounded-3xl" style="padding: 32px; border-radius: 24px;">
+                            <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2" style="font-size: 1.3rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                <i class="bi bi-mortarboard text-primary" style="color: var(--primary);"></i> Education
+                            </h3>
+                            <div class="mb-4" style="margin-bottom: 16px;">
+                                <div class="text-lg font-bold text-white" style="font-size: 1.1rem;">B.Com in Computer Application</div>
+                                <div class="text-primary font-medium text-sm" style="color: var(--primary); font-size: 0.9rem;">R.B. College, RTMNU (Nagpur University)</div>
+                                <div class="text-xs text-dim font-mono mt-1" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Final-year student | Umred, Nagpur</div>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-8 rounded-3xl" style="padding: 32px; border-radius: 24px;">
+                            <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2" style="font-size: 1.3rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                                <i class="bi bi-translate text-accent" style="color: var(--accent);"></i> Languages
+                            </h3>
+                            <div class="flex gap-3 flex-wrap" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white" style="padding: 8px 16px; border-radius: 100px; font-size: 0.9rem; color: white;">English</span>
+                                <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white" style="padding: 8px 16px; border-radius: 100px; font-size: 0.9rem; color: white;">Hindi</span>
+                                <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white" style="padding: 8px 16px; border-radius: 100px; font-size: 0.9rem; color: white;">Marathi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Core Competencies</span></div>
+                    <h2 class="section-title">Technical & <span class="text-gradient">Professional Skills</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Bridging the gap between robust front-end programming and practical business workflow understanding.</p>
+                </div>
+                <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;">
+                    <div class="glass-panel p-8 rounded-3xl border-primary" style="padding: 32px; border-radius: 24px; border-color: var(--primary);">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3" style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                            <i class="bi bi-code-square text-primary" style="color: var(--primary);"></i> Technical Skills
+                        </h3>
+                        <div class="flex gap-3 flex-wrap" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">HTML5</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">CSS3</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">JavaScript</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">C Programming</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">C++</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">JSON</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Front-End Development</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">API Integration</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Basic Data Analysis</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Business Workflow Understanding</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-3xl border-accent" style="padding: 32px; border-radius: 24px; border-color: var(--accent);">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3" style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                            <i class="bi bi-person-workspace text-accent" style="color: var(--accent);"></i> Professional Skills
+                        </h3>
+                        <div class="flex gap-3 flex-wrap" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Problem Solving</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Adaptability</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Communication</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Teamwork</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Research</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Field Survey Work</span>
+                            <span class="glass-panel px-4 py-2 rounded-full text-sm font-bold text-white border-border hover-glow" style="padding: 8px 18px; border-radius: 100px; font-size: 0.95rem; color: white; border: 1px solid var(--border);">Analytical Thinking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Bento Grid) -->
+        <section id="projects" class="section dark-bg-1">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Practical Projects</span></div>
+                    <h2 class="section-title">Digital Systems & <span class="text-gradient">Web Applications</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Built to solve practical problems for Indian users, MSMEs, and public-service workflows using clean code and intuitive UI/UX.</p>
+                </div>
+                <div id="projects-grid" class="bento-grid">
+                    <!-- Injected by script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="experience-wrapper">
+                    <div class="experience-header">
+                        <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Professional Journey</span></div>
+                        <h2 class="section-title">Internships & <span class="text-gradient">Community Work</span></h2>
+                        <p class="text-dim mb-6" style="color: var(--text-dim); margin-bottom: 24px;">Combining technical software development internships with meaningful grassroots NGO experience to understand real-world user challenges.</p>
+                        <div class="glass-panel p-6 rounded-2xl border-primary glow-subtle" style="padding: 24px; border-radius: 20px; border-color: var(--primary);">
+                            <h4 class="text-white font-bold mb-2 flex align-center gap-2" style="color: white; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                                <i class="bi bi-shield-check text-primary" style="color: var(--primary);"></i> Authentic Exposure
+                            </h4>
+                            <p class="text-sm text-dim" style="font-size: 0.9rem; color: var(--text-dim);">All internship projects and community survey work reflect practical, hands-on involvement in solving real problems.</p>
+                        </div>
+                    </div>
+                    <div id="experience-list" class="experience-list">
+                        <!-- Injected by script.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Console -->
+        <section id="terminal" class="section dark-bg-1">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Interactive Portfolio Shell</span></div>
+                    <h2 class="section-title">Ram Kuhite <span class="text-gradient">Interactive Console</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 24px;">Explore projects, skills, and background information through an interactive command line interface. Click any badge below to execute.</p>
+                    <div class="command-badges flex justify-center gap-3 flex-wrap mt-6" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-primary" data-cmd="about" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: var(--primary);"><i class="bi bi-person mr-1"></i> about</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-accent" data-cmd="skills" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: var(--accent);"><i class="bi bi-code-square mr-1"></i> skills</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="finscheme" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-bank mr-1"></i> finscheme</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="sahukaar" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-journal-check mr-1"></i> sahukaar</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="weather" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-cloud-sun mr-1"></i> weather</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="guess" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-controller mr-1"></i> guess</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="watch" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-stopwatch mr-1"></i> watch</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-white" data-cmd="ttt" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;"><i class="bi bi-grid-3x3 mr-1"></i> ttt</span>
+                        <span class="command-badge glass-panel px-4 py-2 rounded-full cursor-pointer hover-glow text-sm font-bold text-cyan" data-cmd="ngo" style="padding: 8px 18px; border-radius: 100px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: var(--cyan);"><i class="bi bi-people mr-1"></i> ngo</span>
+                    </div>
+                </div>
+                <div class="glass-panel terminal-container relative overflow-hidden" style="margin-top: 32px; position: relative; overflow: hidden;">
+                    <div class="terminal-header flex justify-between items-center pb-4 mb-4 border-b border-border" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border);">
+                        <div class="flex items-center gap-2" style="display: flex; align-items: center; gap: 8px;">
+                            <span class="w-3 h-3 rounded-full bg-red-500 inline-block" style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block" style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 inline-block" style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+                            <span class="ml-3 font-mono text-xs text-dim" style="margin-left: 12px; font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--text-dim);">ram_kuhite_console — interactive_portfolio_shell</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-mono" style="display: flex; align-items: center; gap: 16px; font-family: 'Courier New', monospace; font-size: 0.8rem;">
+                            <span class="text-primary flex items-center gap-1" style="color: var(--primary); display: flex; align-items: center; gap: 4px;"><span class="status-dot"></span> SYSTEM: ONLINE</span>
+                            <span class="text-accent" style="color: var(--accent);">BUFFER: 100%</span>
+                        </div>
+                    </div>
+                    <div id="terminal-output" class="terminal-body font-mono text-sm mb-4 max-h-80 overflow-y-auto pr-2" data-lenis-prevent style="color: var(--primary); max-height: 320px; overflow-y: auto; margin-bottom: 16px;">
+                        <div>⚡ Welcome to the Ram Kuhite Interactive Console v2.0</div>
+                        <div class="text-dim mb-4" style="color: var(--text-dim); margin-bottom: 16px;">Explore practical digital systems, MSME workflows, and developer skills. Type <span class="text-accent font-bold" style="color: var(--accent); font-weight: bold;">help</span> or click a badge above to execute.</div>
+                    </div>
+                    <div class="terminal-input-line flex gap-3 items-center pt-3 border-t border-border font-mono" style="display: flex; gap: 12px; align-items: center; padding-top: 12px; border-top: 1px solid var(--border); font-family: 'Courier New', monospace;">
+                        <span class="text-accent font-bold" style="color: var(--accent); font-weight: bold;">ram@portfolio-shell:~$</span>
+                        <input type="text" id="terminal-input" class="bg-transparent border-none outline-none text-white w-full font-mono text-sm" style="background: transparent; border: none; outline: none; color: white; width: 100%; font-family: inherit; font-size: inherit;" placeholder="Enter command or click a badge...">
+                        <span class="typing-indicator text-dim text-xs italic hidden" id="typing-status" style="color: var(--text-dim); font-size: 0.75rem; font-style: italic; display: none;">Executing command...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Verified Achievements</span></div>
+                    <h2 class="section-title">Professional <span class="text-gradient">Certifications</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Demonstrating continuous learning, technical proficiency, and professional readiness through accredited certifications.</p>
+                </div>
+                <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <!-- MSCIT -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-glow flex items-center justify-center text-primary text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">MSCIT</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Maharashtra State Certificate in IT</span>
+                        </div>
+                    </div>
+                    <!-- C Programming -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-glow flex items-center justify-center text-cyan text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--cyan-glow); display: flex; align-items: center; justify-content: center; color: var(--cyan); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">C Programming</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Core Programming Foundation</span>
+                        </div>
+                    </div>
+                    <!-- C++ Programming -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-glow flex items-center justify-center text-cyan text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--cyan-glow); display: flex; align-items: center; justify-content: center; color: var(--cyan); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-file-earmark-code-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">C++ Programming</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Object-Oriented Programming</span>
+                        </div>
+                    </div>
+                    <!-- Web Design with HTML -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-glow flex items-center justify-center text-accent text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-window-sidebar"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Web Design with HTML</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Front-End Structure</span>
+                        </div>
+                    </div>
+                    <!-- Business Communication -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-glow flex items-center justify-center text-primary text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-chat-dots-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Business Communication</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Professional Interaction</span>
+                        </div>
+                    </div>
+                    <!-- Basics of Photoshop -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-glow flex items-center justify-center text-accent text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Basics of Photoshop</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Graphics & UI Design Assets</span>
+                        </div>
+                    </div>
+                    <!-- Front-End Development Internship Certificate -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-glow flex items-center justify-center text-primary text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Front-End Internship</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Verified Experience Certificate</span>
+                        </div>
+                    </div>
+                    <!-- Work Ready Certification -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-glow flex items-center justify-center text-cyan text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--cyan-glow); display: flex; align-items: center; justify-content: center; color: var(--cyan); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Work Ready Certification</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Professional Preparedness</span>
+                        </div>
+                    </div>
+                    <!-- Hunar Se Rozgar Tak Certificate -->
+                    <div class="glass-panel p-6 rounded-2xl border-border hover-glow flex items-center gap-4 cert-card" style="padding: 24px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px;">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-glow flex items-center justify-center text-accent text-2xl" style="width: 56px; height: 56px; border-radius: 16px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-base mb-1" style="color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px;">Hunar Se Rozgar Tak</h4>
+                            <span class="text-xs text-dim font-mono" style="font-size: 0.8rem; color: var(--text-dim); font-family: monospace;">Skill Development Certificate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities & Interests Section -->
+        <section id="activities" class="section dark-bg-1">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Community & Passion</span></div>
+                    <h2 class="section-title">Activities & <span class="text-gradient">Interests</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Active engagement in social welfare initiatives and continuous exploration of technology and business systems.</p>
+                </div>
+                <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;">
+                    <!-- Additional Activities -->
+                    <div class="glass-panel p-8 rounded-3xl border-primary" style="padding: 32px; border-radius: 24px; border-color: var(--primary);">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3" style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                            <i class="bi bi-people-fill text-primary" style="color: var(--primary);"></i> Additional Activities
+                        </h3>
+                        <ul class="space-y-4" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> NSS Participation
+                            </li>
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> Seed Bank Activities
+                            </li>
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> Educational Awareness Activities
+                            </li>
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> Community Participation
+                            </li>
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> Volunteer Work
+                            </li>
+                            <li class="flex items-center gap-3 text-white font-medium" style="display: flex; align-items: center; gap: 12px; font-size: 1.05rem;">
+                                <i class="bi bi-check-circle-fill text-primary" style="color: var(--primary);"></i> Youth Activities
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Interests -->
+                    <div class="glass-panel p-8 rounded-3xl border-accent" style="padding: 32px; border-radius: 24px; border-color: var(--accent);">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3" style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                            <i class="bi bi-heart-fill text-accent" style="color: var(--accent);"></i> Personal Interests
+                        </h3>
+                        <div class="flex gap-3 flex-wrap" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-laptop text-primary"></i> Technology</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-briefcase text-accent"></i> Business Systems</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-bank text-cyan"></i> Public-service Technology</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-search text-primary"></i> Research & Analysis</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-pencil-square text-accent"></i> Content Creation</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-cup-hot text-cyan"></i> Cooking</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-tools text-primary"></i> Learning New Tools</span>
+                            <span class="glass-panel px-4 py-3 rounded-2xl text-sm font-bold text-white border-border flex items-center gap-2" style="padding: 10px 20px; border-radius: 16px; font-size: 0.95rem; color: white; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px;"><i class="bi bi-lightbulb text-accent"></i> Real-world Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header text-center mb-12" style="text-align: center; margin-bottom: 48px;">
+                    <div class="section-tag mb-3" style="margin-bottom: 12px;"><span class="text-gradient font-bold uppercase tracking-widest text-sm" style="font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Get In Touch</span></div>
+                    <h2 class="section-title">Contact <span class="text-gradient">Ram Kuhite</span></h2>
+                    <p class="section-subtitle text-dim max-w-2xl mx-auto" style="color: var(--text-dim); max-width: 670px; margin: 0 auto 48px;">Interested in building practical digital systems, discussing MSME workflows, or exploring web development opportunities? Let's connect.</p>
+                </div>
+                <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 48px; align-items: start;">
+                    <!-- Contact Info & Links -->
+                    <div class="flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+                        <div class="glass-panel p-8 rounded-3xl border-primary" style="padding: 32px; border-radius: 24px; border-color: var(--primary);">
+                            <h3 class="text-xl font-bold mb-6 text-white" style="font-size: 1.4rem; margin-bottom: 24px;">Contact Information</h3>
+                            <div class="flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+                                <div class="flex items-center gap-4" style="display: flex; align-items: center; gap: 16px;">
+                                    <div class="w-12 h-12 rounded-full bg-primary-glow flex items-center justify-center text-primary text-xl" style="width: 48px; height: 48px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.25rem; flex-shrink: 0;">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-dim" style="font-size: 0.75rem;">Email Address</div>
+                                        <a href="mailto:kuhiteram2006@gmail.com" class="text-white font-bold text-base hover:text-primary" style="color: white; font-weight: bold; font-size: 1rem;">kuhiteram2006@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4" style="display: flex; align-items: center; gap: 16px;">
+                                    <div class="w-12 h-12 rounded-full bg-accent-glow flex items-center justify-center text-accent text-xl" style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; flex-shrink: 0;">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-dim" style="font-size: 0.75rem;">Location</div>
+                                        <div class="text-white font-bold text-base" style="color: white; font-weight: bold; font-size: 1rem;">Umred, Nagpur, Maharashtra, India</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-8 rounded-3xl border-border" style="padding: 32px; border-radius: 24px;">
+                            <h3 class="text-xl font-bold mb-6 text-white" style="font-size: 1.4rem; margin-bottom: 24px;">Professional Profiles</h3>
+                            <div class="flex gap-4" style="display: flex; gap: 16px;">
+                                <a href="https://linkedin.com" target="_blank" class="glass-panel flex-1 py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-white font-bold hover-glow border-primary" style="flex: 1; padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; color: white; font-weight: bold; border: 1px solid var(--primary);">
+                                    <i class="bi bi-linkedin text-primary text-xl"></i> LinkedIn
+                                </a>
+                                <a href="https://github.com" target="_blank" class="glass-panel flex-1 py-4 px-6 rounded-2xl flex items-center justify-center gap-3 text-white font-bold hover-glow border-border" style="flex: 1; padding: 16px 24px; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; color: white; font-weight: bold; border: 1px solid var(--border);">
+                                    <i class="bi bi-github text-white text-xl"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="glass-panel p-8 rounded-3xl border-border" style="padding: 32px; border-radius: 24px;">
+                        <h3 class="text-2xl font-bold mb-6 text-white" style="font-size: 1.5rem; margin-bottom: 24px;">Send a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/xqenrwvw" method="POST" class="flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+                            <div class="flex flex-col gap-2" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="name" class="text-sm font-bold text-white" style="font-size: 0.9rem; font-weight: bold; color: white;">Full Name</label>
+                                <input type="text" id="name" name="name" required class="glass-panel px-4 py-3 rounded-xl text-white border-border outline-none focus:border-primary" style="padding: 12px 16px; border-radius: 12px; color: white; border: 1px solid var(--border); background: rgba(255,255,255,0.03); width: 100%; font-family: inherit; font-size: 1rem;">
+                            </div>
+                            <div class="flex flex-col gap-2" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="email" class="text-sm font-bold text-white" style="font-size: 0.9rem; font-weight: bold; color: white;">Email Address</label>
+                                <input type="email" id="email" name="email" required class="glass-panel px-4 py-3 rounded-xl text-white border-border outline-none focus:border-primary" style="padding: 12px 16px; border-radius: 12px; color: white; border: 1px solid var(--border); background: rgba(255,255,255,0.03); width: 100%; font-family: inherit; font-size: 1rem;">
+                            </div>
+                            <div class="flex flex-col gap-2" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="subject" class="text-sm font-bold text-white" style="font-size: 0.9rem; font-weight: bold; color: white;">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="glass-panel px-4 py-3 rounded-xl text-white border-border outline-none focus:border-primary" style="padding: 12px 16px; border-radius: 12px; color: white; border: 1px solid var(--border); background: rgba(255,255,255,0.03); width: 100%; font-family: inherit; font-size: 1rem;">
+                            </div>
+                            <div class="flex flex-col gap-2" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="message" class="text-sm font-bold text-white" style="font-size: 0.9rem; font-weight: bold; color: white;">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="glass-panel px-4 py-3 rounded-xl text-white border-border outline-none focus:border-primary" style="padding: 12px 16px; border-radius: 12px; color: white; border: 1px solid var(--border); background: rgba(255,255,255,0.03); width: 100%; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-4 text-center cursor-pointer font-bold text-base" style="width: 100%; padding: 16px; text-align: center; cursor: pointer; font-weight: bold; font-size: 1rem; border: none;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 id="footer-name">City Hospital</h3>
-                    <p id="footer-address">Address...</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <p id="footer-phone">Phone...</p>
-                    <p id="footer-email">Email...</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul id="footer-links">
-                        <!-- Populated by JS -->
-                    </ul>
-                </div>
+            <h3 class="profile-name text-2xl font-bold tracking-wider mb-2" style="font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; margin-bottom: 8px; color: white;">RAM KUHITE</h3>
+            <p class="footer-phone text-dim font-mono text-sm mb-6" style="color: var(--text-dim); font-family: 'Courier New', monospace; font-size: 0.9rem; margin-bottom: 24px;">Umred, Nagpur, Maharashtra | kuhiteram2006@gmail.com</p>
+            <div class="social-links flex justify-center gap-6 mb-8" style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px;">
+                <a href="https://linkedin.com" target="_blank" class="glass-panel w-12 h-12 rounded-full flex items-center justify-center hover-glow text-white" style="width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" class="glass-panel w-12 h-12 rounded-full flex items-center justify-center hover-glow text-white" style="width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;"><i class="bi bi-github"></i></a>
+                <a href="mailto:kuhiteram2006@gmail.com" class="glass-panel w-12 h-12 rounded-full flex items-center justify-center hover-glow text-white contact-email" style="width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;"><i class="bi bi-envelope-fill"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> City Hospital. All rights reserved.</p>
+            <div class="footer-copyright text-xs text-dim font-mono border-t border-border pt-8 flex justify-between items-center flex-wrap gap-4" style="font-size: 0.75rem; color: var(--text-dim); font-family: 'Courier New', monospace; border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <span>© 2026 Ram Kuhite. Practical Digital Systems Portfolio. All rights reserved.</span>
+                <span class="flex items-center gap-2" style="display: flex; align-items: center; gap: 8px;"><i class="bi bi-cpu text-primary" style="color: var(--primary);"></i> Built with Clean Code & Responsive Architecture</span>
             </div>
         </div>
     </footer>
 
-    <div id="toast-container"></div>
-    <script defer src="app.js"></script>
-    <script type="module" src="three-bg.js"></script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" data-lenis-prevent>
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Biometric Handshake Modal -->
+    <div id="biometric-modal" class="lightbox" data-lenis-prevent style="display: none;">
+        <div class="glass-panel p-8 rounded-3xl max-w-md w-full text-center border-primary glow-heavy relative" style="padding: 32px; border-radius: 28px; max-width: 420px; width: 100%; text-align: center; border-color: var(--primary); position: relative;">
+            <span class="absolute top-4 right-6 text-2xl text-dim cursor-pointer hover:text-white" style="position: absolute; top: 16px; right: 24px; font-size: 1.5rem; color: var(--text-dim); cursor: pointer;" onclick="document.getElementById('biometric-modal').style.display='none'">&times;</span>
+            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary-glow flex items-center justify-center border border-primary animate-pulse" style="width: 80px; height: 80px; margin: 0 auto 24px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; border: 1px solid var(--primary);">
+                <i class="bi bi-fingerprint text-primary text-4xl" style="color: var(--primary); font-size: 2.5rem;"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2 font-outfit" style="font-size: 1.5rem; font-weight: bold; color: white; margin-bottom: 8px;">Developer Handshake Protocol</h3>
+            <p class="text-sm text-dim mb-6" style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 24px;">Verifying Hardware ID & Facial Biometrics for secure game port access...</p>
+            <div class="w-full bg-dark rounded-full h-2 mb-6 overflow-hidden border border-border" style="width: 100%; background: #011627; border-radius: 100px; height: 8px; margin-bottom: 24px; overflow: hidden; border: 1px solid var(--border);">
+                <div class="bg-gradient-to-r from-primary to-accent h-full w-0 transition-all duration-1000" id="biometric-progress" style="background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; width: 0%; transition: width 1s ease;"></div>
+            </div>
+            <div class="font-mono text-xs text-primary" id="biometric-status" style="font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--primary);">Initializing acoustic array and visual sensors...</div>
+        </div>
+    </div>
+
+    <!-- GSAP for Smooth Animations -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis Smooth Scrolling -->
+    <script defer src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <!-- Custom Logic -->
+    <script defer src="script.js"></script>
 </body>
+
 </html>
