@@ -1,0 +1,116 @@
+{
+  "hospital": {
+    "name": "City Hospital",
+    "phone": "+91 98765 43210",
+    "email": "info@cityhospital.com",
+    "address": "Nagpur, Maharashtra, India"
+  },
+  "navigation": [
+    {"id": "home", "label": "Home"},
+    {"id": "about", "label": "About Us"},
+    {"id": "doctors", "label": "Doctors"},
+    {"id": "appointment", "label": "Appointment"},
+    {"id": "contact", "label": "Contact"}
+  ],
+  "home": {
+    "hero": {
+      "title": "Welcome to City Hospital",
+      "subtitle": "Quick and Affordable Healthcare for Everyone",
+      "description": "We provide quick and affordable healthcare services. Book your appointment online easily."
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "We provide the best treatment with expert doctors.",
+      "items": [
+        {"name": "Dentist", "desc": "Complete dental treatment with affordable fees."},
+        {"name": "Eye Specialist", "desc": "Best eye care and treatment services."},
+        {"name": "Child Specialist", "desc": "Special healthcare services for children."},
+        {"name": "General Doctor", "desc": "Fast treatment for common health problems."}
+      ]
+    },
+    "about_preview": {
+      "title": "ABOUT CITY HOSPITAL",
+      "subtitle": "Experienced Doctors and Best Medical Care",
+      "description": "City Hospital provides quality treatment with experienced doctors, modern facilities, and affordable fees.",
+      "features": [
+        "Experienced Doctors",
+        "Affordable Treatment",
+        "Fast Appointment Booking",
+        "Clean and Safe Environment"
+      ]
+    }
+  },
+  "doctors": {
+    "title": "Our Doctors",
+    "subtitle": "Meet our experienced doctors and choose the right specialist for your treatment.",
+    "list": [
+      {"name": "Dr. Sharma", "specialty": "Dentist", "fee": "₹300"},
+      {"name": "Dr. Patil", "specialty": "Eye Specialist", "fee": "₹400"},
+      {"name": "Dr. Khan", "specialty": "Child Specialist", "fee": "₹350"},
+      {"name": "Dr. Mehta", "specialty": "General Doctor", "fee": "₹250"}
+    ],
+    "why_choose_us": {
+      "title": "WHY CHOOSE US",
+      "subtitle": "Experienced Doctors with Quality Care",
+      "description": "Our doctors provide modern treatment with personal care and affordable consultation fees.",
+      "features": [
+        "10+ Years Experience",
+        "Modern Treatment Facilities",
+        "Friendly and Helpful Staff",
+        "Fast Appointment Process"
+      ]
+    }
+  },
+  "appointment": {
+    "title": "Book Appointment",
+    "subtitle": "Book your appointment easily with our experienced doctors.",
+    "why_choose_us": {
+      "title": "Why Choose City Hospital?",
+      "description": "We provide quick and affordable healthcare services with experienced doctors and modern treatment facilities.",
+      "features": [
+        "Experienced Doctors",
+        "Affordable Fees",
+        "Easy Appointment Booking",
+        "Clean and Safe Environment",
+        "Fast Response"
+      ]
+    },
+    "faq": [
+      {
+        "question": "How can I book an appointment?",
+        "answer": "You can fill the appointment form and our team will contact you."
+      },
+      {
+        "question": "What are the consultation charges?",
+        "answer": "Consultation charges start from ₹250 depending on the doctor."
+      },
+      {
+        "question": "Can I select my doctor?",
+        "answer": "Yes, you can choose your preferred doctor from the dropdown list."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Learn more about City Hospital and our commitment to quality healthcare.",
+    "welcome": {
+      "title": "WELCOME TO CITY HOSPITAL",
+      "subtitle": "Providing Quality Healthcare with Care and Trust",
+      "description": "City Hospital provides quality treatment with experienced doctors and good facilities.",
+      "features": [
+        "Experienced Doctors",
+        "Affordable Treatment",
+        "Modern Equipment",
+        "Clean and Safe Environment"
+      ]
+    },
+    "mission": "Our mission is to provide affordable and high-quality healthcare services to every patient with care and compassion.",
+    "vision": "Our vision is to become the most trusted hospital by providing excellent medical care and modern treatment facilities.",
+    "stats": [
+      {"label": "Years Experience", "value": "10+"},
+      {"label": "Doctors", "value": "20+"},
+      {"label": "Happy Patients", "value": "5000+"},
+      {"label": "Emergency Support", "value": "24/7"}
+    ]
+  }
+}
